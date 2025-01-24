@@ -1,12 +1,11 @@
-import './App.css'
-import LandingPage from './components/LandingPage'
-const App =() => {
-
+import './App.css';
+import LandingPage from './components/LandingPage';
+const App = () => {
   return (
     <>
-      <LandingPage/>
+      <LandingPage />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
