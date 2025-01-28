@@ -12,7 +12,11 @@ const About = (props: ScrollingProps) => {
     <>
       <motion.section
         style={{ scale, rotate }}
-        className='relative h-screen flex-col items-center justify-center bg-[#C72626]'></motion.section>
+        className='relative h-screen flex-col items-center justify-center bg-[#C72626]'>
+        {/* <div className="font-[]">
+
+            </div> */}
+      </motion.section>
     </>
   );
 };

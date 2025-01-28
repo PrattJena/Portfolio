@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 import { LandingPageWrapper } from './components/LandingPageWrapper';
 import Lenis from 'lenis';
+import GridAnimation from './components/GridAnimation';
 
 const App = () => {
   useEffect(() => {
