@@ -43,7 +43,6 @@ const LandingPageCard = (props: ScrollingProps) => {
       <motion.section
         style={{ scale, rotate }}
         className='sticky top-0 h-screen bg-[#0b0b0a] p-[2vh]'>
-        <div className='absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] bg-[size:20px_20px]' />
         <Intro opacity={opacity} />
       </motion.section>
     </>
