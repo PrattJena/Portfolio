@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 import './App.css';
 import { LandingPageWrapper } from './components/LandingPageWrapper';
 import Lenis from 'lenis';
-import GridAnimation from './components/GridAnimation';
+// import GridAnimation from './components/Tile';
 
 const App = () => {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      lerp: 0.05,
+    });
 
     // Track the RAF ID to cancel later
     let rafId: number;
@@ -25,9 +27,9 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <LandingPageWrapper />
-    </>
+    </div>
   );
 };
 

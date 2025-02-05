@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import Projects from './Projects';
-import LandingPageCard from './LandingPageCard';
-import LandingPage from './LandingPage';
+import LandingPageCard from './HeroSection/LandingPageCard';
 import { useScroll } from 'motion/react';
 
 export const LandingPageWrapper = () => {
@@ -11,7 +10,7 @@ export const LandingPageWrapper = () => {
     offset: ['start end', 'start start'],
   });
   return (
-    <div className='bg-[#0b0b0a]'>
+    <div className='noise bg-[#0b0b0a]'>
       <main className='relative h-[400vh]'>
         <LandingPageCard scrollYProgress={scrollYProgress} />
         {/* <LandingPage scrollYProgress={scrollYProgress} /> */}

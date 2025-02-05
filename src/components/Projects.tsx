@@ -22,7 +22,7 @@ const Projects = forwardRef((props, forwardedRef) => {
       {/* Sticky Projects Section */}
       <motion.section
         ref={mergedRefs}
-        className='relative flex h-[300vh] w-full flex-col items-center bg-transparent p-[5.5vw]'
+        className='relative flex h-[300vh] w-full flex-col items-center bg-[#0b0b0a] p-[5.5vw]'
         {...props}>
         <div className='sticky top-0 flex h-screen flex-col items-center justify-center'>
           {/* Sticky Text */}

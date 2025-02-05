@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+@layer base {
+  :root {
+    --grid-template-columns-20: repeat(20, minmax(0, 1fr));
+  }
+}
+
 @font-face {
   font-family: 'Nohemi';
   src:
@@ -39,7 +45,3 @@
     mix-blend-mode: soft-light;
   }
 }
-
-/* @theme {
-  --spacing: 1px;
-} */
