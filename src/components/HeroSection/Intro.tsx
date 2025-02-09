@@ -39,21 +39,23 @@ const Intro = (props: introProps) => {
       // Your existing animation sequence
       await animate([
         ['.fade-in-paragraph', { opacity: [0, 1] }, { at: 0, duration: 0.25 }],
-        [
-          '.word:not(.image-container *)',
-          { opacity: [0, 1] },
-          { delay: stagger(0.1), duration: 0.2 },
-        ],
+        ['.word', { opacity: [0, 1] }, { delay: stagger(0.05), duration: 0.15 }],
       ]);
 
-      await animate(
-        '.image-container',
-        {
-          clipPath: ['inset(50% 0 100% 0)', 'inset(0% 0 0% 0)'],
-          opacity: [0, 1],
-        },
-        { duration: 1, ease: 'easeOut' },
-      );
+      await animate([
+        ['.hero-button', { opacity: [0, 1] }, { delay: stagger(0.25), duration: 0.25 }],
+      ]);
+
+      await animate([
+        [
+          '.image-container',
+          {
+            clipPath: ['inset(50% 0 100% 0)', 'inset(0% 0 0% 0)'],
+            opacity: [0, 1],
+          },
+          { duration: 0.5, ease: 'easeOut' },
+        ],
+      ]);
 
       await animate([
         ['.scroll-text', { opacity: [0, 1], y: [10, 0] }, { duration: 0.3, ease: 'easeOut' }],
@@ -76,10 +78,10 @@ const Intro = (props: introProps) => {
     <motion.div
       ref={scope} // Attach scope to parent container
       style={{ opacity: props.opacity }}
-      className='absolute inset-0 h-[100%] p-[calc(2vw+2vh)]'>
+      className='absolute inset-0 h-[100%] p-[calc(2vw+2vh)] lg:px-[calc(4vw+3vh)] lg:py-[calc(1vw+3vh)] 2xl:px-[calc(6vw+4vh)]'>
       <HeroText />
-      <div className='flex h-[40%] flex-row lg:h-[45%]'>
-        <div className='scroll-text flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
+      <div className='flex h-[40%] flex-row overflow-hidden lg:h-[45%]'>
+        <div className='scroll-text inset-0 flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
           Scroll Down
         </div>
 
@@ -87,7 +89,7 @@ const Intro = (props: introProps) => {
         <motion.div
           className='image-container flex w-[100%] items-end justify-end'
           initial={{ opacity: 0 }}>
-          <img src={ProfileImage} className='h-[60%] rounded-[1em] lg:h-[80%]' />
+          <img src={ProfileImage} className='h-[70%] rounded-[1em] lg:h-[93%]' />
         </motion.div>
       </div>
     </motion.div>

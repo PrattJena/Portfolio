@@ -1,9 +1,21 @@
 @import 'tailwindcss';
 
-@layer base {
-  :root {
-    --grid-template-columns-20: repeat(20, minmax(0, 1fr));
-  }
+@theme {
+  --text-h1: clamp(3rem, calc(2.3rem + 4vw), 10rem);
+  --text-h3: clamp(1.8rem, calc(1.8rem + 1.5vw), 7rem);
+  --text-h4: clamp(1.5rem, calc(1.4rem + 1vw), 2.2rem);
+  --text-span: clamp(0.5rem, calc(0.2rem + 1vw), 3rem);
+  --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 5rem);
+  --gap-xs: clamp(0.5rem, calc(0.3rem + 1vw), 1rem);
+  --gap-sm: clamp(1.3rem, calc(0.9rem + 1vw), 2rem);
+  --gap-md: clamp(2rem, calc(2.5rem + 1vw), 3rem);
+  --gap-lg: clamp(3rem, calc(3.5rem + 1.5vw), 4rem);
+  --gap-xl: clamp(4rem, calc(4.5rem + 1.5vw), 5rem);
+  --gap-2xl: clamp(5rem, calc(5.5rem + 1.5vw), 6rem);
+  --gap-3xl: clamp(6rem, calc(7rem + 1.5vw), 8rem);
+}
+.section-padding {
+  padding: clamp(3rem, calc(3.2rem + 3.7vw), 9rem) clamp(0.5rem, 0.613rem + 2vw, 6rem);
 }
 
 @font-face {
@@ -16,6 +28,11 @@
 @font-face {
   font-family: 'Aeonik';
   src: url('./assets/fonts/Aeonik-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AeonikBold';
+  src: url('./assets/fonts/Aeonik-Bold.otf') format('opentype');
 }
 
 @font-face {

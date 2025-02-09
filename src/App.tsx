@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 import { LandingPageWrapper } from './components/LandingPageWrapper';
 import Lenis from 'lenis';
+import { GlassOverlay } from './components/HeroSection/GlassOverlay';
 // import GridAnimation from './components/Tile';
 
 const App = () => {
@@ -27,9 +28,10 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <LandingPageWrapper />
-    </div>
+      <div className='h-screen w-screen bg-purple-400'>next div</div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 const DURATION = 0.25;
-const STAGGER = 0.025;
+const STAGGER = 0.015;
 
 export const Links = ({ children, href }: { children: string; href: string }) => {
   return (
@@ -10,7 +10,7 @@ export const Links = ({ children, href }: { children: string; href: string }) =>
       href={href}
       whileHover='hovered'
       style={{ cursor: 'pointer' }}
-      className='relative block overflow-hidden font-[Aeonik] text-[1.4vh] font-medium whitespace-nowrap text-[rgb(256,256,256,0.4)] uppercase lg:text-[1.6vh]'>
+      className='relative block overflow-hidden font-[Aeonik] text-[1.4vh] font-semibold whitespace-nowrap text-[rgb(256,256,256,0.4)] lg:text-[1.6vh]'>
       <div>
         {children.split('').map((l, i) => {
           return (
@@ -21,7 +21,7 @@ export const Links = ({ children, href }: { children: string; href: string }) =>
                 },
                 hovered: {
                   y: '-100%',
-                  color: '#FFFFFF',
+                  color: 'rgb(256,256,256,0.4)',
                 },
               }}
               transition={{
@@ -63,5 +63,3 @@ export const Links = ({ children, href }: { children: string; href: string }) =>
     </motion.a>
   );
 };
-
-// variants={{ initial: { y: 0 }, hovered: { y: '-100%' } }}

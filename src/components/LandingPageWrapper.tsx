@@ -1,7 +1,8 @@
 import { useRef } from 'react';
-import Projects from './Projects';
+
 import LandingPageCard from './HeroSection/LandingPageCard';
 import { useScroll } from 'motion/react';
+import Projects from './ProjectSection/Projects';
 
 export const LandingPageWrapper = () => {
   const sectionRef = useRef(null);
@@ -10,13 +11,11 @@ export const LandingPageWrapper = () => {
     offset: ['start end', 'start start'],
   });
   return (
-    <div className='noise bg-[#0b0b0a]'>
-      <main className='relative h-[400vh]'>
+    <div className='bg-[#050505]'>
+      <main className='relative'>
         <LandingPageCard scrollYProgress={scrollYProgress} />
-        {/* <LandingPage scrollYProgress={scrollYProgress} /> */}
-        <Projects ref={sectionRef} />
+        <Projects ref={sectionRef} scrollYProgress={scrollYProgress} />
       </main>
-      <div className='h-screen bg-orange-600' />
     </div>
   );
 };

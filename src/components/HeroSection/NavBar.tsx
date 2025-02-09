@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import Logo from '../../assets/images/PJ.svg';
 import { Links } from './Links';
 

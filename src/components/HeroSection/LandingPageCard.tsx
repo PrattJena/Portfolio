@@ -1,12 +1,9 @@
-import landingImage from '../assets/images/IMG3.jpg';
-import { motion, useTransform, MotionValue, animate } from 'motion/react';
+import { motion, useTransform, MotionValue } from 'motion/react';
 import Intro from './Intro';
-// import Tile from './Tile';
-import { useEffect, useState } from 'react';
-import { Grid } from './Grid';
+// import { Grid } from './Grid';
 
 type ScrollingProps = {
-  scrollYProgress: MotionValue;
+  scrollYProgress: MotionValue<number>;
 };
 
 const LandingPageCard = (props: ScrollingProps) => {
@@ -14,8 +11,8 @@ const LandingPageCard = (props: ScrollingProps) => {
   const opacity = useTransform(props.scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <motion.section style={{ scale }} className='noise sticky top-0 h-screen bg-[#0b0b0a]'>
-      <Grid opacity={opacity} />
+    <motion.section style={{ scale }} className='sticky top-0 h-screen bg-[#050505]'>
+      {/* <Grid opacity={opacity} /> */}
       <Intro opacity={opacity} />
     </motion.section>
   );
