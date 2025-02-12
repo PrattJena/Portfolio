@@ -7,8 +7,8 @@ type ProjectDescriptionProps = {
 
 const ProjectDescription = ({ activeProject }: ProjectDescriptionProps) => {
   return (
-    <div className='mb-[1vw] w-0 lg:w-[43%] xl:w-[45%]'>
-      <div className='sticky top-[3vw] hidden lg:flex lg:flex-col'>
+    <div className='mb-[1vw] hidden md:block md:w-[41%] lg:w-[43%] xl:w-[45%]'>
+      <div className='sticky top-[3vw] hidden md:flex md:flex-col'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

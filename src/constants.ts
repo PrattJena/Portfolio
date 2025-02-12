@@ -5,7 +5,7 @@ import placeholder3 from './assets/images/placeholder3.jpg';
 export const contents = [
   {
     number: 1,
-    title: 'Project 1',
+    title: 'Instacart Data Analysis',
     description:
       '1Lorem ipsum odor amet, consectetuer adipiscing elit. Finibus quam sodales conubia integer nam praesent viverra at lorem. Fringilla id vitae egestas magna etiam lacus elit sapien?',
     image: placeholder1,

@@ -8,7 +8,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ projectRefs }) => {
   return (
-    <div className='flex w-full flex-col lg:w-[50%] xl:w-[44%]'>
+    <div className='flex w-full flex-col md:w-[52%] lg:w-[50%] xl:w-[44%]'>
       {contents.map((item, index) => (
         <motion.div
           ref={projectRefs[index]}
@@ -19,6 +19,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectRefs }) => {
           <h3 className='text-h3 font-[Aeonik] font-semibold tracking-[-0.0175] text-white'>
             {item.title}
           </h3>
+
+          <div className='mt-[var(--gap-xs)] flex flex-col md:hidden'>
+            <p className='text-p font-[Aeonik] text-[rgb(256,256,256,0.5)]'>{item.description}</p>
+            <div className='mt-[var(--gap-xs)] flex flex-row gap-[0.6vw]'>
+              {item.techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  style={{ lineHeight: 1 }}
+                  className='text-span border-1 border-[rgb(256,256,256,0.8)] p-[0.9vw] text-[rgb(256,256,256,0.8)]'>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
       ))}
     </div>

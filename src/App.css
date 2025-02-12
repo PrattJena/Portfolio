@@ -1,12 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
+  --radial-gradient: radial-gradient(
+    circle 90vw at 50% 100%,
+    black 0% 47%,
+    blue 49% 53%,
+    black 55%
+  );
   --text-h1: clamp(3rem, calc(2.3rem + 4vw), 10rem);
-  --text-h3: clamp(1.8rem, calc(1.8rem + 1.5vw), 7rem);
+  --text-h3: clamp(1.3rem, calc(1.2rem + 2vw), 8rem);
   --text-h4: clamp(1.5rem, calc(1.4rem + 1vw), 2.2rem);
   --text-span: clamp(0.5rem, calc(0.2rem + 1vw), 3rem);
   --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 5rem);
-  --gap-xs: clamp(0.5rem, calc(0.3rem + 1vw), 1rem);
+  --gap-xs: clamp(0.2rem, calc(0.2rem + 0.4vw), 1rem);
   --gap-sm: clamp(1.3rem, calc(0.9rem + 1vw), 2rem);
   --gap-md: clamp(2rem, calc(2.5rem + 1vw), 3rem);
   --gap-lg: clamp(3rem, calc(3.5rem + 1.5vw), 4rem);
