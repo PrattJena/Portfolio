@@ -20,7 +20,7 @@ const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
           root: props.containerRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 inline-block items-baseline overflow-hidden font-[AeonikBold] leading-[0.9] font-black tracking-tighter text-wrap text-[#111010]'>
+        className='text-h1 inline-block items-baseline overflow-hidden font-[AeonikBold] leading-[0.9] font-black tracking-tighter text-wrap text-neutral-200'>
         <div>
           {'SELECTED '.split('').map((l, i) => (
             <motion.span
@@ -50,7 +50,7 @@ const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
           root: props.containerRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 relative inline-flex items-baseline overflow-hidden pr-[10px] font-[AeonikBold] leading-[0.9] font-black tracking-tighter text-wrap text-[#111010]'>
+        className='text-h1 relative inline-flex items-baseline overflow-hidden pr-[10px] font-[AeonikBold] leading-[0.9] font-black tracking-tighter text-wrap text-neutral-200'>
         <div className='flex items-baseline whitespace-nowrap'>
           {'PROJECTS/'.split('').map((l, i) => (
             <motion.span
@@ -80,7 +80,7 @@ const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
               ease: 'easeInOut',
               delay: STAGGER * 'PROJECTS/'.length + 0.015,
             }}>
-            <sup className='text-h4 font-[Aeonik] font-black text-[#111010]'>(4)</sup>
+            <sup className='text-h4 font-[Aeonik] font-black text-neutral-200'>(4)</sup>
           </motion.span>
         </div>
       </motion.h1>

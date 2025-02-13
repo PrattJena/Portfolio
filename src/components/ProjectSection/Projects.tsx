@@ -8,10 +8,11 @@ import ProjectHeader from './ProjectHeader';
 
 const NoiseBackground = () => (
   <svg
-    className='pointer-events-none absolute inset-0 h-full w-full'
+    className='pointer-events-none absolute inset-0 h-full w-full rounded-t-[2vw] opacity-80 mix-blend-hard-light'
     xmlns='http://www.w3.org/2000/svg'>
     <filter id='noiseFilter'>
-      <feTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch' />
+      <feTurbulence type='turbulence' baseFrequency='0.5' />
+      <feColorMatrix type='saturate' values='0' />
     </filter>
     <rect width='100%' height='100%' filter='url(#noiseFilter)' />
   </svg>
@@ -25,7 +26,7 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
   const containerRef = useRef(null);
   const mergedRefs = mergeRefs([containerRef, forwardedRef]);
 
-  const scale = useTransform(props.scrollYProgress, [0, 0.6], [0.9, 1]);
+  const scale = useTransform(props.scrollYProgress, [0, 0.6], [0.93, 1]);
 
   // Create refs for each project section
   const projectRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -53,7 +54,7 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
       <motion.section
         style={{ scale }}
         ref={mergedRefs}
-        className='section-padding relative flex w-full flex-col rounded-t-[2vw] bg-[#d53030]'>
+        className='section-padding relative flex w-full flex-col rounded-t-[2vw] bg-[#0e0e0e]'>
         <NoiseBackground />
         <div className='relative'>
           <ProjectSectionTitle containerRef={containerRef} />

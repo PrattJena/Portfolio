@@ -1,6 +1,7 @@
 import { motion, useScroll } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import Logo from '../../assets/images/PJ.svg';
+import linkedin from '../../assets/images/linkedin.svg';
+import github from '../../assets/images/github.svg';
 
 type ProjectHeaderProps = {
   projectSectionRef: React.RefObject<HTMLElement>;
@@ -32,7 +33,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
     };
   }, [projectSectionRef]);
 
-  const circleVariants = {
+  const buttonVariants = {
     hidden: {
       scale: 0,
     },
@@ -47,29 +48,26 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
 
   return (
     <motion.header
-      className='fixed top-0 right-0 left-0 z-50'
+      style={{ zIndex: isVisible ? 40 : 1 }}
+      className='fixed top-0 right-0 left-0'
       initial='hidden'
       animate={isVisible ? 'visible' : 'hidden'}>
       <div className='flex items-center justify-end px-[calc(2vw+2vh)] py-4'>
         <div className='flex gap-3'>
           <motion.div
-            variants={circleVariants}
+            variants={buttonVariants}
             initial='hidden'
             animate={isVisible ? 'visible' : 'hidden'}
-            className='h-10 w-10 cursor-pointer rounded-full bg-[#FF6B6B] transition-opacity hover:opacity-80'
-          />
+            className='inline-flex cursor-pointer items-center justify-center rounded-full bg-stone-400 px-[3vh] py-[1vh] transition-opacity hover:opacity-80'>
+            <img src={linkedin} alt='LinkedIn' className='h-[3vh] w-[3vh]' />
+          </motion.div>
           <motion.div
-            variants={circleVariants}
+            variants={buttonVariants}
             initial='hidden'
             animate={isVisible ? 'visible' : 'hidden'}
-            className='h-10 w-10 cursor-pointer rounded-full bg-[#4ECDC4] transition-opacity hover:opacity-80'
-          />
-          <motion.div
-            variants={circleVariants}
-            initial='hidden'
-            animate={isVisible ? 'visible' : 'hidden'}
-            className='h-10 w-10 cursor-pointer rounded-full bg-[#FFE66D] transition-opacity hover:opacity-80'
-          />
+            className='inline-flex cursor-pointer items-center justify-center rounded-full bg-stone-400 px-[3vh] py-[1vh] transition-opacity hover:opacity-80'>
+            <img src={github} alt='LinkedIn' className='h-[3vh] w-[3vh]' />
+          </motion.div>
         </div>
       </div>
     </motion.header>
