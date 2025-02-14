@@ -32,7 +32,7 @@ const ProjectDescription = ({ activeProject }: ProjectDescriptionProps) => {
                 <span
                   key={index}
                   style={{ lineHeight: 1 }}
-                  className='text-span border-1 border-[rgb(256,256,256,0.8)] p-[0.5vw] text-[rgb(256,256,256,0.8)]'>
+                  className='text-span rounded-[0.5vw] border-1 border-[rgb(256,256,256,0.8)] p-[0.5vw] text-[rgb(256,256,256,0.8)]'>
                   {tech}
                 </span>
               ))}

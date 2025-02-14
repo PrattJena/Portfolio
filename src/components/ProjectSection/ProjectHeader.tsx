@@ -1,7 +1,7 @@
 import { motion, useScroll } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import linkedin from '../../assets/images/linkedin.svg';
 import github from '../../assets/images/github.svg';
+import linkedin from '../../assets/images/linkedin.svg';
 
 type ProjectHeaderProps = {
   projectSectionRef: React.RefObject<HTMLElement>;
@@ -33,12 +33,14 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
     };
   }, [projectSectionRef]);
 
-  const buttonVariants = {
+  const circleVariants = {
     hidden: {
       scale: 0,
+      height: '0%',
     },
     visible: {
       scale: 1,
+      height: '100%',
       transition: {
         duration: 0.5,
         ease: [0.23, 1, 0.32, 1], // Custom cubic bezier for a springy effect
@@ -48,25 +50,32 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
 
   return (
     <motion.header
-      style={{ zIndex: isVisible ? 40 : 1 }}
-      className='fixed top-0 right-0 left-0'
+      className='fixed top-0 right-0 left-0 z-1'
       initial='hidden'
       animate={isVisible ? 'visible' : 'hidden'}>
-      <div className='flex items-center justify-end px-[calc(2vw+2vh)] py-4'>
+      <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
         <div className='flex gap-3'>
           <motion.div
-            variants={buttonVariants}
+            variants={circleVariants}
             initial='hidden'
             animate={isVisible ? 'visible' : 'hidden'}
-            className='inline-flex cursor-pointer items-center justify-center rounded-full bg-stone-400 px-[3vh] py-[1vh] transition-opacity hover:opacity-80'>
-            <img src={linkedin} alt='LinkedIn' className='h-[3vh] w-[3vh]' />
+            className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+            <img
+              src={github}
+              alt='github'
+              className='mx-[var(--gap-sm)] my-[var(--gap-xs)] size-[2.7vh]'
+            />
           </motion.div>
           <motion.div
-            variants={buttonVariants}
+            variants={circleVariants}
             initial='hidden'
             animate={isVisible ? 'visible' : 'hidden'}
-            className='inline-flex cursor-pointer items-center justify-center rounded-full bg-stone-400 px-[3vh] py-[1vh] transition-opacity hover:opacity-80'>
-            <img src={github} alt='LinkedIn' className='h-[3vh] w-[3vh]' />
+            className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+            <img
+              src={linkedin}
+              alt='linkedin'
+              className='mx-[var(--gap-sm)] my-[var(--gap-xs)] size-[2.7vh]'
+            />
           </motion.div>
         </div>
       </div>

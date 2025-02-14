@@ -22,8 +22,9 @@ const GradientGlassOverlay = () => {
           background: `radial-gradient(
             circle at 90% 0%,
             #FF7733 0%,
+            #B14A30 15%,
             #571C11 30%,
-            #0e0e0f 60%,
+            #0E0E0f 60%,
             #000000 100%
           )`,
         }}

@@ -12,6 +12,7 @@
   --text-h4: clamp(1.5rem, calc(1.4rem + 1vw), 2.2rem);
   --text-span: clamp(0.5rem, calc(0.2rem + 1vw), 3rem);
   --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 5rem);
+  --text-p2: clamp(1.32rem, calc(0.8rem + 1.2vw), 5.3rem);
   --gap-xs: clamp(0.2rem, calc(0.2rem + 0.4vw), 1rem);
   --gap-sm: clamp(1.3rem, calc(0.9rem + 1vw), 2rem);
   --gap-md: clamp(2rem, calc(2.5rem + 1vw), 3rem);

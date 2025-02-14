@@ -2,10 +2,13 @@ import { motion } from 'motion/react';
 import ArcImage from '../../assets/images/duotone.jpg';
 import { NavBar } from './NavBar';
 import { HeroButtons } from './HeroButtons';
+import { createPortal } from 'react-dom';
 
 const text = "I'm Pratyush Jena foo and I'm a Software Developer based in United States.";
 
 export const HeroText = () => {
+  const portalContainer = document.getElementById('navbar-portal');
+
   return (
     <div className='flex h-[60%] flex-col justify-between lg:h-[55%]'>
       <NavBar />

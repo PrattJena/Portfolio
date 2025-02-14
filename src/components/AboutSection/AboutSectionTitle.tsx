@@ -4,25 +4,25 @@ import { RefObject } from 'react';
 const DURATION = 0.4;
 const STAGGER = 0.03;
 
-type ProjectSectionTitleProps = {
-  containerRef: RefObject<HTMLElement>;
+type AboutSectionTitleProps = {
+  parentRef: RefObject<HTMLElement>;
 };
 
-const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
+const AboutSectionTitle = (props: AboutSectionTitleProps) => {
   return (
-    <div className='flex flex-col items-start md:flex-row'>
+    <div className='flex w-full flex-col md:w-[52%] lg:w-[50%] xl:w-[44%]'>
       <motion.h1
         initial='initial'
         whileInView='inView'
         viewport={{
           once: true,
           amount: 'all',
-          root: props.containerRef,
+          root: props.parentRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 inline-block items-baseline overflow-y-hidden font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2]'>
+        className='text-h1 inline-block items-baseline overflow-y-hidden font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2] md:mr-[1vw]'>
         <div>
-          {'SELECTED '.split('').map((l, i) => (
+          {'DEVELOPER,'.split('').map((l, i) => (
             <motion.span
               key={`selected-${i}`}
               className='inline-flex overflow-y-clip'
@@ -47,12 +47,12 @@ const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
         viewport={{
           once: true,
           amount: 'all',
-          root: props.containerRef,
+          root: props.parentRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 relative inline-flex items-baseline overflow-hidden pr-[10px] font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2]'>
-        <div className='flex items-baseline whitespace-nowrap'>
-          {'PROJECTS/'.split('').map((l, i) => (
+        className='text-h1 relative inline-flex items-baseline overflow-y-hidden pr-[10px] font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2]'>
+        <div className='flex items-baseline whitespace-nowrap md:mr-[1vw]'>
+          {'ANALYST'.split('').map((l, i) => (
             <motion.span
               key={`projects-${i}`}
               className='inline-flex overflow-y-clip'
@@ -68,24 +68,10 @@ const ProjectSectionTitle = (props: ProjectSectionTitleProps) => {
               {l !== ' ' ? l : '\u00A0'}
             </motion.span>
           ))}
-          <motion.span
-            key='number'
-            className='ml-1 inline-flex'
-            variants={{
-              initial: { opacity: 0 },
-              inView: { opacity: 1 },
-            }}
-            transition={{
-              duration: DURATION,
-              ease: 'easeInOut',
-              delay: STAGGER * 'PROJECTS/'.length + 0.015,
-            }}>
-            <sup className='text-h4 font-[Aeonik] font-black text-[#F3F2F2]'>(4)</sup>
-          </motion.span>
         </div>
       </motion.h1>
     </div>
   );
 };
 
-export default ProjectSectionTitle;
+export default AboutSectionTitle;

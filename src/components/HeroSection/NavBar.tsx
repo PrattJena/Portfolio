@@ -8,7 +8,7 @@ const links = [
 
 export const NavBar = () => {
   return (
-    <nav className='navbar z-40 flex h-[5vh] w-full flex-row justify-between overflow-clip opacity-0'>
+    <nav className='navbar z-[999] flex h-[5vh] w-full flex-row justify-between overflow-clip opacity-0'>
       <div className='flex h-[100%] items-center'>
         <img src={Logo} className='h-full' />
       </div>

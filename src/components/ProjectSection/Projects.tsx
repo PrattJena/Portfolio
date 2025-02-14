@@ -5,18 +5,7 @@ import ProjectDescription from './ProjectDescription';
 import ProjectCard from './ProjectCard';
 import ProjectSectionTitle from './ProjectSectionTitle';
 import ProjectHeader from './ProjectHeader';
-
-const NoiseBackground = () => (
-  <svg
-    className='pointer-events-none absolute inset-0 h-full w-full rounded-t-[2vw] opacity-80 mix-blend-hard-light'
-    xmlns='http://www.w3.org/2000/svg'>
-    <filter id='noiseFilter'>
-      <feTurbulence type='turbulence' baseFrequency='0.5' />
-      <feColorMatrix type='saturate' values='0' />
-    </filter>
-    <rect width='100%' height='100%' filter='url(#noiseFilter)' />
-  </svg>
-);
+import { NoiseBackground } from '../NoiseBackground';
 
 type ScrollingProps = {
   scrollYProgress: MotionValue<number>;
@@ -26,7 +15,7 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
   const containerRef = useRef(null);
   const mergedRefs = mergeRefs([containerRef, forwardedRef]);
 
-  const scale = useTransform(props.scrollYProgress, [0, 0.6], [0.93, 1]);
+  const scale = useTransform(props.scrollYProgress, [0.5, 1], [0.95, 1]);
 
   // Create refs for each project section
   const projectRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -54,11 +43,11 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
       <motion.section
         style={{ scale }}
         ref={mergedRefs}
-        className='section-padding relative flex w-full flex-col rounded-t-[2vw] bg-[#0e0e0e]'>
+        className='section-padding relative flex w-full flex-col bg-[#0e0e0e]'>
         <NoiseBackground />
         <div className='relative'>
           <ProjectSectionTitle containerRef={containerRef} />
-          <div className='relative mt-[var(--gap-sm)] flex h-full flex-row justify-between md:mt-[var(--gap-md)] xl:mt-[var(--gap-lg)] 2xl:mt-[var(--gap-3xl)]'>
+          <div className='relative mt-[var(--gap-md)] flex h-full flex-row justify-between md:mt-[var(--gap-lg)] 2xl:mt-[var(--gap-2xl)]'>
             <ProjectDescription activeProject={activeProject} />
             <ProjectCard projectRefs={projectRefs} />
           </div>
