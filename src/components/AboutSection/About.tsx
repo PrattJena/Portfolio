@@ -17,7 +17,7 @@ export const About = () => {
     offset: ['end end', 'end start'],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const scale = useTransform(scrollYProgress, [0.15, 0.7], [1, 0.92]);
 
   return (
     <motion.div
@@ -33,13 +33,13 @@ export const About = () => {
         <AboutSectionTitle parentRef={parentRef} />
       </div>
 
-      <div className='relative mt-[var(--gap-sm)] flex h-full flex-col md:mt-[var(--gap-md)] md:flex-row md:justify-between xl:mt-[var(--gap-2xl)] 2xl:mt-[var(--gap-3xl)]'>
+      <div className='relative mt-[var(--gap-sm)] flex h-full flex-col md:mt-[var(--gap-md)] md:flex-row md:justify-between xl:mt-[var(--gap-xl)] 2xl:mt-[var(--gap-2xl)]'>
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className='md:w-[41%] lg:w-[43%] xl:w-[45%]'>
+          className='flex items-start md:w-[43%] lg:w-[45%] xl:w-[50%]'>
           <img src={ProfileImage2} className='w-full rounded-[1em] md:hidden' />
           <img
             src={ProfileImage1}
