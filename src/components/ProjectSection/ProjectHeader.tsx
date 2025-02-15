@@ -50,7 +50,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
 
   return (
     <motion.header
-      className='fixed top-0 right-0 left-0 z-1'
+      className='fixed top-0 right-0 left-0 z-50'
       initial='hidden'
       animate={isVisible ? 'visible' : 'hidden'}>
       <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
@@ -63,7 +63,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
             <img
               src={github}
               alt='github'
-              className='mx-[var(--gap-sm)] my-[var(--gap-xs)] size-[2.7vh]'
+              className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
             />
           </motion.div>
           <motion.div
@@ -74,7 +74,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
             <img
               src={linkedin}
               alt='linkedin'
-              className='mx-[var(--gap-sm)] my-[var(--gap-xs)] size-[2.7vh]'
+              className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
             />
           </motion.div>
         </div>

@@ -17,14 +17,14 @@ export const About = () => {
     offset: ['end end', 'end start'],
   });
 
-  const scale = useTransform(scrollYProgress, [0.15, 0.7], [1, 0.92]);
+  const scale = useTransform(scrollYProgress, [0.2, 0.7], [1, 0.94]);
 
   return (
     <motion.div
       style={{ scale }}
       ref={parentRef}
-      className='section-padding relative flex w-screen flex-col rounded-b-[3vw] bg-[#0e0e0e]'>
-      <NoiseBackground />
+      className='section-padding relative z-2 flex w-screen flex-col rounded-b-[3vw] bg-[#0e0e0e]'>
+      <NoiseBackground className='rounded-b-[3vw]' />
 
       <div className='flex flex-row justify-between'>
         <div className='hidden w-[30%] md:block'>
@@ -43,10 +43,10 @@ export const About = () => {
           <img src={ProfileImage2} className='w-full rounded-[1em] md:hidden' />
           <img
             src={ProfileImage1}
-            className='hidden w-full rounded-[1vw] md:block lg:w-[90%] 2xl:w-[80%]'
+            className='hidden w-full rounded-[1vw] md:block lg:w-[90%] xl:w-[78%] 2xl:w-[73%]'
           />
         </motion.div>
-        <div className='mt-[var(--gap-sm)] w-full md:mt-0 md:w-[52%] lg:w-[50%] xl:w-[44%]'>
+        <div className='mt-[var(--gap-sm)] w-full md:mt-0 md:w-[52%] lg:w-[50%] xl:w-[48%]'>
           <AboutMe />
         </div>
       </div>

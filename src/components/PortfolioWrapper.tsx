@@ -4,6 +4,8 @@ import LandingPageCard from './HeroSection/LandingPageCard';
 import { useScroll } from 'motion/react';
 import Projects from './ProjectSection/Projects';
 import { About } from './AboutSection/About';
+import { NoiseBackground } from './NoiseBackground';
+import { SkillSection } from './SkillSection/SkillSection';
 
 export const PortfolioWrapper = () => {
   const projectsRef = useRef(null);
@@ -17,9 +19,10 @@ export const PortfolioWrapper = () => {
         <LandingPageCard scrollYProgress={scrollYProgress} />
         <Projects ref={projectsRef} scrollYProgress={scrollYProgress} />
       </div>
-      <div className='bg-[#E1E9DB]'>
+      <div className='relative bg-[#E1E9DB]'>
+        <NoiseBackground />
         <About />
-        <div className='h-[100vh] bg-[#E1E9DB]'></div>
+        <SkillSection />
       </div>
     </main>
   );

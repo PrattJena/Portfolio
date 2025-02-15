@@ -1,6 +1,10 @@
-export const NoiseBackground = () => (
+type NoiseBackgroundProps = {
+  className?: string;
+};
+
+export const NoiseBackground = (props: NoiseBackgroundProps) => (
   <svg
-    className='pointer-events-none absolute inset-0 h-full w-full rounded-[2vw] opacity-80 mix-blend-hard-light'
+    className={`pointer-events-none absolute inset-0 h-full w-full opacity-80 mix-blend-hard-light ${props.className}`}
     xmlns='http://www.w3.org/2000/svg'>
     <filter id='noiseFilter'>
       <feTurbulence type='turbulence' baseFrequency='0.5' />

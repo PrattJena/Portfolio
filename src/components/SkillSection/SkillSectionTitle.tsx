@@ -4,13 +4,13 @@ import { RefObject } from 'react';
 const DURATION = 0.4;
 const STAGGER = 0.03;
 
-type AboutSectionTitleProps = {
+type SkillSectionTitleProps = {
   parentRef: RefObject<HTMLElement>;
 };
 
-const AboutSectionTitle = (props: AboutSectionTitleProps) => {
+const SkillSectionTitle = (props: SkillSectionTitleProps) => {
   return (
-    <div className='flex w-full flex-col md:w-[52%] lg:w-[50%] xl:w-[48%]'>
+    <div className='flex w-full flex-col md:flex-row'>
       <motion.h1
         initial='initial'
         whileInView='inView'
@@ -20,9 +20,9 @@ const AboutSectionTitle = (props: AboutSectionTitleProps) => {
           root: props.parentRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 inline-block items-baseline overflow-y-hidden font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2] md:mr-[1vw]'>
+        className='md:text-h1 inline-block items-baseline overflow-y-hidden font-[AeonikBold] text-[calc(var(--text-h1)-1vw)] leading-[1] font-black tracking-tighter text-wrap text-[#1A1B1C] md:mr-[1vw]'>
         <div>
-          {'DEVELOPER,'.split('').map((l, i) => (
+          {'DEVELOPMENT'.split('').map((l, i) => (
             <motion.span
               key={`selected-${i}`}
               className='inline-flex overflow-y-clip'
@@ -50,9 +50,9 @@ const AboutSectionTitle = (props: AboutSectionTitleProps) => {
           root: props.parentRef,
           margin: '0px 0px -10% 0px',
         }}
-        className='text-h1 relative inline-flex items-baseline overflow-y-hidden pr-[10px] font-[AeonikBold] leading-[1] font-black tracking-tighter text-wrap text-[#F3F2F2]'>
+        className='md:text-h1 relative inline-flex items-baseline overflow-y-hidden pr-[10px] font-[AeonikBold] text-[calc(var(--text-h1)-1vw)] leading-[1] font-black tracking-tighter text-wrap text-[#1A1B1C]'>
         <div className='flex items-baseline whitespace-nowrap md:mr-[1vw]'>
-          {'ANALYST/'.split('').map((l, i) => (
+          {'STACK/'.split('').map((l, i) => (
             <motion.span
               key={`projects-${i}`}
               className='inline-flex overflow-y-clip'
@@ -74,4 +74,4 @@ const AboutSectionTitle = (props: AboutSectionTitleProps) => {
   );
 };
 
-export default AboutSectionTitle;
+export default SkillSectionTitle;

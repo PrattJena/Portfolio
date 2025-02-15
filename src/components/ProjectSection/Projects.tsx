@@ -44,7 +44,7 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
         style={{ scale }}
         ref={mergedRefs}
         className='section-padding relative flex w-full flex-col bg-[#0e0e0e]'>
-        <NoiseBackground />
+        <NoiseBackground className='rounded-t-[3vw]' />
         <div className='relative'>
           <ProjectSectionTitle containerRef={containerRef} />
           <div className='relative mt-[var(--gap-md)] flex h-full flex-row justify-between md:mt-[var(--gap-lg)] 2xl:mt-[var(--gap-2xl)]'>

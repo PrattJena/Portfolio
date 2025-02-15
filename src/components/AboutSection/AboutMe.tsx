@@ -16,6 +16,21 @@ export const AboutMe = () => {
   const workExRef = useRef<HTMLParagraphElement>(null);
   const isInView4 = useInView(workExRef, { amount: 'all', once: true });
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Stagger delay between each child
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
+
   return (
     <div className='flex flex-col'>
       <motion.p
@@ -57,21 +72,26 @@ export const AboutMe = () => {
       </motion.p>
       <motion.div
         ref={workExRef}
-        initial={{ opacity: 0 }}
-        animate={workExRef ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}>
-        <WorkExperienceBadge
-          image={rit}
-          title='Teaching Assistant'
-          company='RIT'
-          time='(09/2023 - 12/2023)'
-        />
-        <WorkExperienceBadge
-          image={hrc}
-          title='Software Engineer Intern'
-          company='Highradius'
-          time='(2021-2022)'
-        />
+        variants={containerVariants}
+        initial='hidden'
+        animate={isInView4 ? 'visible' : 'hidden'}
+        className='flex flex-col'>
+        <motion.div variants={itemVariants}>
+          <WorkExperienceBadge
+            image={rit}
+            title='Teaching Assistant'
+            company='RIT'
+            time='(09/2023 - 12/2023)'
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <WorkExperienceBadge
+            image={hrc}
+            title='Software Engineer Intern'
+            company='Highradius'
+            time='(2021-2022)'
+          />
+        </motion.div>
       </motion.div>
     </div>
   );
