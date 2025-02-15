@@ -17,7 +17,9 @@ export const SkillBadge = (props: WorkExProps) => {
             className='text-p2 font-[Aeonik] font-semibold tracking-[-0.02em] text-[#F3F2F2]'>
             {props.technology}
           </div>
-          <div style={{ lineHeight: 1.35 }} className='text-p font-[Aeonik] text-[#F3F2F2]'>
+          <div
+            style={{ lineHeight: 1.35 }}
+            className='text-p font-[Aeonik] tracking-tight text-[#F3F2F2]'>
             {props.technologyType}
           </div>
         </div>

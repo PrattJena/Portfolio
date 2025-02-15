@@ -46,11 +46,17 @@ export const contents = [
   },
 ];
 
-export const skills = [
+export type Skill = {
+  image: string;
+  technology: string;
+  technologyType: string;
+};
+
+export const skills: Skill[] = [
   { image: reactIcon, technology: 'React', technologyType: 'Frontend Framework' },
-  { image: typescriptIcon, technology: 'TypeScript', technologyType: 'Programming Language' },
+  { image: typescriptIcon, technology: 'TypeScript', technologyType: 'Coding Language' },
   { image: tailwindIcon, technology: 'TailwindCSS', technologyType: 'CSS Framework' },
-  { image: pythonIcon, technology: 'Python', technologyType: 'Programming Language' },
+  { image: pythonIcon, technology: 'Python', technologyType: 'Coding Language' },
   { image: djangoIcon, technology: 'Django', technologyType: 'Backend Framework' },
   { image: pandasIcon, technology: 'Pandas', technologyType: 'Data Analyis Library' },
   { image: awsIcon, technology: 'AWS', technologyType: 'Cloud Computing' },
