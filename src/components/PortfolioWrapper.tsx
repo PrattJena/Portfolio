@@ -6,6 +6,7 @@ import Projects from './ProjectSection/Projects';
 import { About } from './AboutSection/About';
 import { NoiseBackground } from './NoiseBackground';
 import { SkillSection } from './SkillSection/SkillSection';
+import { Footer } from './StickyFooter/Footer';
 
 export const PortfolioWrapper = () => {
   const projectsRef = useRef(null);
@@ -19,11 +20,12 @@ export const PortfolioWrapper = () => {
         <LandingPageCard scrollYProgress={scrollYProgress} />
         <Projects ref={projectsRef} scrollYProgress={scrollYProgress} />
       </div>
-      <div className='relative bg-[#E1E9DB]'>
+      <div className='relative bg-[#e9e8db]'>
         <NoiseBackground />
         <About />
         <SkillSection />
       </div>
+      <Footer />
     </main>
   );
 };

@@ -26,7 +26,7 @@ export const SkillSection = () => {
     <motion.div
       style={{ y }}
       ref={parentRef}
-      className='section-padding relative flex w-full flex-col bg-[#E1E9DB]'>
+      className='section-padding relative flex w-full flex-col bg-[#e9e8db]'>
       <NoiseBackground />
       <h1 className='md:text-h1 inline-block items-baseline overflow-y-hidden font-[AeonikBold] text-[calc(var(--text-h1)-1vw)] leading-[1] font-black tracking-tighter text-wrap text-[#1A1B1C] md:mr-[1vw]'>
         DEVELOPMENT STACK

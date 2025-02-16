@@ -1,18 +1,13 @@
 @import 'tailwindcss';
 
 @theme {
-  --radial-gradient: radial-gradient(
-    circle 90vw at 50% 100%,
-    black 0% 47%,
-    blue 49% 53%,
-    black 55%
-  );
   --text-h1: clamp(3rem, calc(2.3rem + 4vw), 10rem);
+  --text-h2: clamp(1.8rem, calc(1.2rem + 3vw), 9rem);
   --text-h3: clamp(1.3rem, calc(1.2rem + 2vw), 8rem);
   --text-h4: clamp(1.5rem, calc(1.4rem + 1vw), 2.2rem);
   --text-span: clamp(0.5rem, calc(0.2rem + 1vw), 3rem);
   --size-icon: clamp(1.5rem, calc(1.4rem + 2vw), 7rem);
-  --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 5rem);
+  --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 4rem);
   --text-p2: clamp(1.25rem, calc(0.75rem + 1.2vw), 5.3rem);
   --gap-xs: clamp(0.4rem, calc(0.4rem + 0.4vw), 1rem);
   --gap-sm: clamp(1.3rem, calc(0.7rem + 0.8vw), 2rem);
@@ -21,9 +16,53 @@
   --gap-xl: clamp(4rem, calc(4.5rem + 1.5vw), 5rem);
   --gap-2xl: clamp(5rem, calc(5.5rem + 1.5vw), 6rem);
   --gap-3xl: clamp(6rem, calc(7rem + 1.5vw), 8rem);
+  --radial-gradient-background: 250, 250, 250;
+  --solid-color-background: 15, 15, 15;
+  --overlay-color: 255, 255, 255;
 }
 .section-padding {
   padding: clamp(3rem, calc(3.2rem + 3.7vw), 9rem) clamp(0.5rem, 0.613rem + 2vw, 6rem);
+}
+
+.radial-gradient {
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(var(--radial-gradient-background), 0.05) 0%,
+      transparent 60%
+    )
+    rgba(var(--solid-color-background), 1);
+}
+
+.linear-mask {
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+}
+
+.linear-overlay {
+  background-image: linear-gradient(
+    -75deg,
+    rgba(var(--overlay-color), 0.1) calc(var(--x) + 20%),
+    rgba(var(--overlay-color), 0.5) calc(var(--x) + 25%),
+    rgba(var(--overlay-color), 0.1) calc(var(--x) + 100%)
+  );
+  mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  -webkit-mask:
+    linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
 }
 
 @font-face {

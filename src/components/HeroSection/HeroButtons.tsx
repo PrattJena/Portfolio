@@ -13,11 +13,11 @@ export const HeroButtons = () => {
           },
           hovered: {
             scale: 1.05,
-            transition: {
-              type: 'spring',
-              stiffness: 300,
-              damping: 10,
-            },
+            // transition: {
+            //   type: 'spring',
+            //   stiffness: 300,
+            //   damping: 10,
+            // },
           },
           tapped: {
             scale: 0.95,
@@ -39,11 +39,11 @@ export const HeroButtons = () => {
           },
           hovered: {
             scale: 1.05,
-            transition: {
-              type: 'spring',
-              stiffness: 300,
-              damping: 10,
-            },
+            // transition: {
+            //   type: 'spring',
+            //   stiffness: 300,
+            //   damping: 10,
+            // },
           },
           tapped: {
             scale: 0.95,
