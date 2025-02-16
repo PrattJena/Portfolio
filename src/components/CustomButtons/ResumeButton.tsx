@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 const DotExpandButton = () => {
   return (
     <button className='group gap-xs flex items-center rounded-full bg-[#F3F2F2] py-[var(--gap-xs)] pr-[var(--gap-sm)] pl-[var(--gap-sm)] transition-all duration-300 ease-in-out hover:bg-[#1A1B1C] hover:pr-[calc(var(--gap-sm)*1.1)] hover:pl-[calc(var(--gap-sm)*1.1)] hover:text-[#F3F2F2] active:bg-[#FF7733]'>
-      <span className='group-active:bg- overflow-x-hidden rounded-full bg-[#1A1B1C] p-[0.5vh] text-[calc(1vh+0.5vw)] transition-colors duration-300 group-hover:bg-[#F3F2F2] group-active:bg-[#F3F2F2] 2xl:text-[calc(1vh+0.3vw)]'>
+      <span className='overflow-x-hidden rounded-full bg-[#1A1B1C] p-[0.5vh] text-[calc(1vh+0.5vw)] transition-colors duration-300 group-hover:bg-[#F3F2F2] group-active:bg-[#F3F2F2] 2xl:text-[calc(1vh+0.3vw)]'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           stroke='currentColor'
