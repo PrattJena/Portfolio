@@ -1,5 +1,5 @@
-import { motion, useScroll } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import github from '../../assets/images/github.svg';
 import linkedin from '../../assets/images/linkedin.svg';
 
@@ -12,74 +12,68 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (projectSectionRef.current) {
-        const rect = projectSectionRef.current.getBoundingClientRect();
-        const threshold = window.innerHeight * -0.15; // -10% of viewport height
-        const isAboveProject = rect.top > threshold;
-        setIsVisible(!isAboveProject);
-      }
+      if (!projectSectionRef.current) return;
+
+      const { top } = projectSectionRef.current.getBoundingClientRect();
+      setIsVisible(top < window.innerHeight * -0.15);
     };
 
-    // Also handle window resize to update the threshold
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll(); // Initial check
 
-    // Initial check
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, [projectSectionRef]);
-
-  const circleVariants = {
-    hidden: {
-      scale: 0,
-      height: '0%',
-    },
-    visible: {
-      scale: 1,
-      height: '100%',
-      transition: {
-        duration: 0.5,
-        ease: [0.23, 1, 0.32, 1], // Custom cubic bezier for a springy effect
-      },
-    },
-  };
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <motion.header
-      className='fixed top-0 right-0 left-0 z-50'
-      initial='hidden'
-      animate={isVisible ? 'visible' : 'hidden'}>
-      <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
-        <div className='flex gap-3'>
-          <motion.div
-            variants={circleVariants}
-            initial='hidden'
-            animate={isVisible ? 'visible' : 'hidden'}
-            className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
-            <img
-              src={github}
-              alt='github'
-              className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
-            />
-          </motion.div>
-          <motion.div
-            variants={circleVariants}
-            initial='hidden'
-            animate={isVisible ? 'visible' : 'hidden'}
-            className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
-            <img
-              src={linkedin}
-              alt='linkedin'
-              className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
-            />
-          </motion.div>
-        </div>
-      </div>
-    </motion.header>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.header
+          className='fixed top-0 right-0 left-0 z-50'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}>
+          <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
+            <div className='flex gap-3'>
+              {/* GitHub Button */}
+              <motion.a
+                href='YOUR_GITHUB_URL'
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.23, 1, 0.32, 1],
+                }}
+                className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+                <img
+                  src={github}
+                  alt='github'
+                  className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
+                />
+              </motion.a>
+
+              {/* LinkedIn Button */}
+              <motion.a
+                href='YOUR_LINKEDIN_URL'
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.23, 1, 0.32, 1],
+                }}
+                className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+                <img
+                  src={linkedin}
+                  alt='linkedin'
+                  className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
+                />
+              </motion.a>
+            </div>
+          </div>
+        </motion.header>
+      )}
+    </AnimatePresence>
   );
 };
 

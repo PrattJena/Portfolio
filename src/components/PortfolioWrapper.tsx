@@ -7,6 +7,7 @@ import { About } from './AboutSection/About';
 import { NoiseBackground } from './NoiseBackground';
 import { SkillSection } from './SkillSection/SkillSection';
 import { Footer } from './StickyFooter/Footer';
+import GlassOverlay from './HeroSection/GlassOverlay';
 
 export const PortfolioWrapper = () => {
   const projectsRef = useRef(null);
@@ -16,7 +17,7 @@ export const PortfolioWrapper = () => {
   });
   return (
     <main>
-      <div className='relative bg-[#0e0e0e]'>
+      <div className='relative bg-transparent'>
         <LandingPageCard scrollYProgress={scrollYProgress} />
         <Projects ref={projectsRef} scrollYProgress={scrollYProgress} />
       </div>

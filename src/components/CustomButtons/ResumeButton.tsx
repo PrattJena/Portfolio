@@ -1,9 +1,7 @@
-import React from 'react';
-import { motion } from 'motion/react';
-
-const DotExpandButton = () => {
+const ResumeButton = ({ className = '' }) => {
   return (
-    <button className='group gap-xs flex items-center rounded-full bg-[#F3F2F2] py-[var(--gap-xs)] pr-[var(--gap-sm)] pl-[var(--gap-sm)] transition-all duration-300 ease-in-out hover:bg-[#1A1B1C] hover:pr-[calc(var(--gap-sm)*1.1)] hover:pl-[calc(var(--gap-sm)*1.1)] hover:text-[#F3F2F2] active:bg-[#FF7733]'>
+    <button
+      className={`group gap-xs flex origin-center items-center rounded-full bg-[#F3F2F2] px-[var(--gap-sm)] py-[var(--gap-xs)] transition-all duration-300 ease-in-out hover:bg-[#1A1B1C] hover:px-[calc(var(--gap-sm)*1.1)] hover:text-[#F3F2F2] active:bg-[#FF7733] ${className}`}>
       <span className='overflow-x-hidden rounded-full bg-[#1A1B1C] p-[0.5vh] text-[calc(1vh+0.5vw)] transition-colors duration-300 group-hover:bg-[#F3F2F2] group-active:bg-[#F3F2F2] 2xl:text-[calc(1vh+0.3vw)]'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -13,7 +11,7 @@ const DotExpandButton = () => {
           viewBox='0 0 24 24'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className='-translate-x-[200%] text-[0px] transition-all duration-300 group-hover:translate-x-0 group-hover:text-lg group-hover:text-black group-active:translate-x-0 group-active:-rotate-45 group-active:text-lg group-active:text-black'
+          className='-translate-x-[200%] text-[0px] transition-all duration-300 group-hover:translate-x-0 group-hover:text-[1.2vh] group-hover:text-black group-active:rotate-[-45deg] group-active:text-black'
           height='1em'
           width='1em'>
           <line x1='5' y1='12' x2='19' y2='12' stroke='currentColor' />
@@ -27,4 +25,4 @@ const DotExpandButton = () => {
   );
 };
 
-export default DotExpandButton;
+export default ResumeButton;

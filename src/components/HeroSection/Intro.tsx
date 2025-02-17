@@ -80,18 +80,17 @@ const Intro = (props: introProps) => {
       style={{ opacity: props.opacity }}
       className='absolute inset-0 h-[100%] p-[calc(2vw+2vh)] lg:px-[calc(4vw+3vh)] lg:py-[calc(1vw+3vh)] 2xl:px-[calc(6vw+4vh)]'>
       <HeroText />
-      <div className='flex h-[40%] flex-row overflow-hidden lg:h-[45%]'>
+      {/* <div className='flex h-[40%] flex-row overflow-hidden lg:h-[45%]'>
         <div className='scroll-text inset-0 flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
           Scroll Down
         </div>
 
-        {/* Image container with animation class */}
         <motion.div
           className='image-container flex w-[100%] items-end justify-end'
           initial={{ opacity: 0 }}>
           <img src={ProfileImage} className='h-[70%] rounded-[1em] lg:h-[93%]' />
         </motion.div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

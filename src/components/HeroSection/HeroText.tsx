@@ -2,16 +2,16 @@ import { motion } from 'motion/react';
 import ArcImage from '../../assets/images/duotone.jpg';
 import { NavBar } from './NavBar';
 import { HeroButtons } from './HeroButtons';
-import { createPortal } from 'react-dom';
+import ResumeButton from '../CustomButtons/ResumeButton';
+import ShinyButton from '../CustomButtons/ShinyButton';
 
 const text = "I'm Pratyush Jena foo and I'm a Software Developer based in United States.";
 
 export const HeroText = () => {
-  const portalContainer = document.getElementById('navbar-portal');
-
   return (
-    <div className='flex h-[60%] flex-col justify-between lg:h-[55%]'>
+    <div className='flex h-[80%] flex-col justify-between lg:h-[70%]'>
       <NavBar />
+
       <div className='w-[93%] lg:w-[65%] 2xl:w-[60%]'>
         <p className='fade-in-paragraph text-[1.8vh] opacity-0 lg:text-[2.3vh] 2xl:text-[2.6vh]'>
           <span className='font-[Aeonik] text-[#c7c4c4] opacity-50'>Hi, </span>
@@ -58,9 +58,10 @@ export const HeroText = () => {
             ),
           )}
         </h1>
-
-        {/* Add Buttons here */}
-        <HeroButtons />
+        <div className='gap-xs relative inset-0 mt-3.5 flex flex-row lg:mt-6'>
+          <ResumeButton className='hero-button opacity-0' />
+          <ShinyButton className='hero-button opacity-0' />
+        </div>
       </div>
     </div>
   );

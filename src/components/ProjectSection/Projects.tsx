@@ -14,7 +14,6 @@ type ScrollingProps = {
 const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
   const containerRef = useRef(null);
   const mergedRefs = mergeRefs([containerRef, forwardedRef]);
-
   const scale = useTransform(props.scrollYProgress, [0.5, 1], [0.95, 1]);
 
   // Create refs for each project section
@@ -29,7 +28,6 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
       target: ref,
       offset: ['start 0.3', 'end 0.3'],
     });
-
     useMotionValueEvent(scrollYProgress, 'change', (latest) => {
       if (latest > 0 && latest < 1) {
         setActiveProject(index);
@@ -41,9 +39,14 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
     <>
       <ProjectHeader projectSectionRef={containerRef} />
       <motion.section
-        style={{ scale }}
+        style={{
+          scale,
+          boxShadow: '0 -20px 40px -20px rgba(0, 0, 0, 0.5)',
+          position: 'relative',
+          zIndex: 10,
+        }}
         ref={mergedRefs}
-        className='section-padding relative flex w-full flex-col bg-[#0e0e0e]'>
+        className='section-padding flex w-full flex-col rounded-t-[3vw] bg-[#0e0e0e]'>
         <NoiseBackground className='rounded-t-[3vw]' />
         <div className='relative'>
           <ProjectSectionTitle containerRef={containerRef} />
