@@ -1,6 +1,6 @@
 import { motion, MotionValue, useAnimate } from 'motion/react';
 import ProfileImage from '../../assets/images/IMG3.jpg';
-import { HeroText } from './HeroText';
+import { HeroSectionContent } from './HeroSectionContent';
 import { useEffect } from 'react';
 import { stagger } from 'motion';
 
@@ -79,7 +79,7 @@ const Intro = (props: introProps) => {
       ref={scope} // Attach scope to parent container
       style={{ opacity: props.opacity }}
       className='absolute inset-0 h-[100%] p-[calc(2vw+2vh)] lg:px-[calc(4vw+3vh)] lg:py-[calc(1vw+3vh)] 2xl:px-[calc(6vw+4vh)]'>
-      <HeroText />
+      <HeroSectionContent />
       {/* <div className='flex h-[40%] flex-row overflow-hidden lg:h-[45%]'>
         <div className='scroll-text inset-0 flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
           Scroll Down

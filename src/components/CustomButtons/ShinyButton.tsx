@@ -20,7 +20,7 @@ const ShinyButton = ({ className = '', style = {}, ...motionProps }) => {
         ...style,
       }}
       {...motionProps}>
-      <span className='linear-mask relative block h-full w-full font-[Aeonik] text-[calc(1vh+0.5vw)] font-semibold text-[#F3F2F2] 2xl:text-[calc(1vh+0.3vw)]'>
+      <span className='linear-mask relative block h-full w-full font-[Aeonik] text-[calc(1.2vh+0.5vw)] font-semibold text-[#F3F2F2] 2xl:text-[calc(1.2vh+0.35vw)]'>
         Contact Me
       </span>
       <span className='linear-overlay absolute inset-0 block rounded-full p-px' />

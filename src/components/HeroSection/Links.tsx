@@ -10,8 +10,8 @@ export const Links = ({ children, href }: { children: string; href: string }) =>
       href={href}
       whileHover='hovered'
       whileTap={{ color: '#571C11' }}
-      style={{ cursor: 'pointer', lineHeight: 0.8 }}
-      className='xl:text-span relative block overflow-hidden font-[Aeonik] text-[calc(var(--text-span)+0.5vh)] font-semibold whitespace-nowrap text-[#F3F2F2]'>
+      style={{ cursor: 'pointer', lineHeight: 0.9 }}
+      className='xl:text-span relative block overflow-hidden font-[Aeonik] text-[calc(var(--text-span)+0.25vh+0.1vw)] font-semibold whitespace-nowrap text-[#F3F2F2]'>
       <div>
         {children.split('').map((l, i) => {
           return (

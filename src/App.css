@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --text-main: clamp(3rem, calc(1.7rem + 5.75vw), 15rem);
   --text-h1: clamp(3rem, calc(2.3rem + 4vw), 10rem);
   --text-h2: clamp(1.8rem, calc(1.2rem + 3vw), 9rem);
   --text-h3: clamp(1.3rem, calc(1.2rem + 2vw), 8rem);
@@ -97,6 +98,13 @@
 @font-face {
   font-family: 'Bricolage';
   src: url('./assets/fonts/BricolageGrotesque-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MaziusDisplayExtraItalic';
+  src:
+    url('./assets/fonts/MaziusDisplay-Extraitalic.woff') format('woff'),
+    url('./assets/fonts/MaziusDisplay-Extraitalic.woff2') format('woff2');
 }
 
 @layer utilities {
