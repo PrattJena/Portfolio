@@ -1,6 +1,7 @@
-import placeholder1 from './assets/images/placeholder1.jpg';
-import placeholder2 from './assets/images/placeholder2.jpg';
-import placeholder3 from './assets/images/placeholder3.jpg';
+import instacart from './assets/images/instacart.jpg';
+import nyccrash from './assets/images/nyccrash.jpg';
+import jsonschema from './assets/images/jsonschema.jpg';
+import hrc from './assets/images/hrc.jpg';
 import reactIcon from './assets/images/react.svg';
 import typescriptIcon from './assets/images/typescript.svg';
 import tailwindIcon from './assets/images/tailwind.svg';
@@ -17,7 +18,7 @@ export const contents = [
     title: 'Instacart Data Analysis',
     description:
       'Analyzed 32M Instacart orders to uncover purchasing patterns and optimize recommendations. Designed SQL queries for relational modeling, integrated diverse datasets, and used itemset mining to identify frequently bought products, aiding targeted marketing and inventory management.',
-    image: placeholder1,
+    image: instacart,
     techStack: ['PostgreSQL', 'MongoDB', 'Python', 'Pandas'],
     url: 'https://github.com/PrattJena/Instacart_Project_CSCI_620',
   },
@@ -26,7 +27,7 @@ export const contents = [
     title: 'NYC Crash Data Analysis',
     description:
       'Examined 2M record NYC crash data to identify accident hotspots, trends, and contributing factors using geospatial analysis and statistical modeling. Applied clustering and association rule mining to uncover seasonal traffic patterns, common vehicle types, and accident causes, aiding data-driven road safety improvements.',
-    image: placeholder2,
+    image: nyccrash,
     techStack: ['Python', 'Folium', 'Pandas', 'PostgreSQL'],
     url: 'https://github.com/PrattJena/NYC_Crash_Data_Analysis',
   },
@@ -35,7 +36,7 @@ export const contents = [
     title: 'JSON Schema Analysis',
     description:
       'This project explores real-world JSON data to uncover discrepancies in schema usage, identifying missing or extra fields. Using GitHub data and automated analysis, it provides insights into schema adherence and optimization, aiding the development of more practical and efficient JSON schemas.',
-    image: placeholder3,
+    image: jsonschema,
     techStack: ['Python', 'Pandas', 'REST APIs', 'FastText'],
     url: 'https://github.com/PrattJena/JSON_Schema_Analysis',
   },
@@ -44,7 +45,7 @@ export const contents = [
     title: 'Autonomous Recievables',
     description:
       'Built a full-stack web app to simplify accounts receivable management and improve financial forecasting. Designed an intuitive interface with smart filters for easy customer tracking. Integrated machine learning models to predict payment behavior, helping AR analysts make better, data-driven decisions.',
-    image: placeholder1,
+    image: hrc,
     techStack: ['React', 'Javascript', 'PostgreSQL', 'Python', 'Material UI', 'Flask'],
     url: 'https://github.com/PrattJena/Autonomous_Receivables',
   },

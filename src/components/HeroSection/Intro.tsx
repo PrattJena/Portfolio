@@ -63,13 +63,13 @@ const Intro = (props: introProps) => {
     <motion.div
       ref={scope} // Attach scope to parent container
       style={{ opacity: props.opacity }}
-      className='absolute inset-0 h-[100%] p-[calc(2vw+2vh)] lg:px-[calc(4vw+3vh)] lg:py-[calc(1vw+3vh)] 2xl:px-[calc(6vw+4vh)]'>
+      className='absolute inset-0 flex h-[100%] flex-col justify-between p-[calc(2vw+2vh)] lg:px-[calc(4vw+3vh)] lg:py-[calc(1vw+3vh)] 2xl:px-[calc(6vw+4vh)]'>
       <HeroSectionContent />
-      {/* <div className='flex h-[40%] flex-row overflow-hidden lg:h-[45%]'>
-        <div className='scroll-text inset-0 flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
+      <div className='flex h-[20%] flex-row items-end justify-end'>
+        <div className='scroll-text font-[Aeonik] text-[calc(var(--text-span)*0.75)] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
           Scroll Down
         </div>
-      </div> */}
+      </div>
     </motion.div>
   );
 };

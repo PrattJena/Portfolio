@@ -1,6 +1,5 @@
 import { motion, useTransform, MotionValue } from 'motion/react';
 import Intro from './Intro';
-// import { Grid } from './Grid';
 import { NoiseBackground } from '../NoiseBackground';
 
 type ScrollingProps = {
@@ -27,7 +26,6 @@ const LandingPageCard = (props: ScrollingProps) => {
             )`,
           }}
         />
-        {/* Glass color-dodge using repeating-linear-gradient */}
         <div
           className='pointer-events-none absolute inset-0'
           style={{
@@ -45,7 +43,6 @@ const LandingPageCard = (props: ScrollingProps) => {
       </div>
       <NoiseBackground />
       <Intro opacity={opacity} />
-      {/* Content Container */}
     </motion.section>
   );
 };
