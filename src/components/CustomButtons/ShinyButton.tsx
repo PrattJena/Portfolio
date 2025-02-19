@@ -29,7 +29,6 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
   const handleClick = async () => {
     if (isCopied) return;
 
-    // Copy email to clipboard
     try {
       await navigator.clipboard.writeText('pratt@pratt.com');
     } catch (err) {
@@ -37,7 +36,6 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
       return;
     }
 
-    // 1. Slide "Contact Me" up and out
     await animate(
       '.text-content',
       {
@@ -49,7 +47,6 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
       },
     );
 
-    // 2. Change to "Copied!" and place it below (y: '100%')
     setIsCopied(true);
     await animate(
       '.text-content',
@@ -62,7 +59,6 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
       },
     );
 
-    // 3. Animate background and slide "Copied!" up to y: '0%'
     await Promise.all([
       animate(
         scope.current,
@@ -85,10 +81,8 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
       ),
     ]);
 
-    // 4. Wait 1.5s
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    // 5. Slide "Copied!" up and out
     await animate(
       '.text-content',
       {
@@ -100,7 +94,6 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
       },
     );
 
-    // 6. Change text back to "Contact Me" and place it below
     setIsCopied(false);
     await animate(
       '.text-content',
@@ -109,11 +102,10 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
         opacity: 0,
       },
       {
-        duration: 0, // immediate
+        duration: 0,
       },
     );
 
-    // 7. Slide "Contact Me" back up and fade out background
     await Promise.all([
       animate(
         '.text-content',

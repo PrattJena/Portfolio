@@ -5,9 +5,16 @@ import useMousePosition from '../../hooks/useMousePosition';
 const ResumeButton = ({ className = '' }) => {
   const [isCursorVisible, setIsCursorVisible] = useState(false);
   const { x, y } = useMousePosition();
+
+  const onClickUrl = (url: string) => () => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   return (
     <>
       <button
+        onClick={onClickUrl(
+          'https://drive.google.com/file/d/1dzjOp687Ctr5dvl8da4gBqOXAWuOj7Uy/view?usp=sharing',
+        )}
         onMouseEnter={() => setIsCursorVisible(true)}
         onMouseLeave={() => setIsCursorVisible(false)}
         className={`group gap-xs flex origin-center cursor-pointer items-center rounded-full bg-[#F3F2F2] px-[var(--gap-sm)] py-[var(--gap-xs)] transition-all duration-300 ease-in-out hover:bg-[#1A1B1C] hover:px-[calc(var(--gap-sm)*1.1)] hover:text-[#F3F2F2] active:bg-[#FF7733] ${className}`}>

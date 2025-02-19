@@ -7,6 +7,10 @@ interface ProjectCardProps {
   setIsCursorVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const onClickUrl = (url: string) => () => {
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ projectRefs, setIsCursorVisible }) => {
   return (
     <div className='flex w-full flex-col md:w-[52%] lg:w-[50%] xl:w-[44%]'>
@@ -16,6 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ projectRefs, setIsCursorVisib
           key={item.number}
           className='mb-[8vw] w-full last:mb-0'>
           <img
+            onClick={onClickUrl(item.url)}
             src={item.image}
             alt='Project'
             className='w-full cursor-pointer rounded-[1.5vh] object-cover'

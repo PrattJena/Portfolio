@@ -21,7 +21,7 @@ export const AboutMe = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // Stagger delay between each child
+        staggerChildren: 0.3,
       },
     },
   };

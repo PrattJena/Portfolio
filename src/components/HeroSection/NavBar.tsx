@@ -10,11 +10,6 @@ export const NavBar = () => {
     window.location.href = '/';
   };
 
-  const openInNewTab = (url: string): void => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-    if (newWindow) newWindow.opener = null;
-  };
-
   const onClickUrl =
     (url: string): React.MouseEventHandler<HTMLAnchorElement> =>
     (e) => {

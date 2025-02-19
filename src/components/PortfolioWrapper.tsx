@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-
 import LandingPageCard from './HeroSection/LandingPageCard';
 import { useScroll } from 'motion/react';
 import Projects from './ProjectSection/Projects';
@@ -7,7 +6,6 @@ import { About } from './AboutSection/About';
 import { NoiseBackground } from './NoiseBackground';
 import { SkillSection } from './SkillSection/SkillSection';
 import { Footer } from './StickyFooter/Footer';
-import GlassOverlay from './HeroSection/GlassOverlay';
 
 export const PortfolioWrapper = () => {
   const projectsRef = useRef(null);

@@ -19,6 +19,7 @@ export const contents = [
       'Analyzed 32M Instacart orders to uncover purchasing patterns and optimize recommendations. Designed SQL queries for relational modeling, integrated diverse datasets, and used itemset mining to identify frequently bought products, aiding targeted marketing and inventory management.',
     image: placeholder1,
     techStack: ['PostgreSQL', 'MongoDB', 'Python', 'Pandas'],
+    url: 'https://github.com/PrattJena/Instacart_Project_CSCI_620',
   },
   {
     number: 2,
@@ -27,6 +28,7 @@ export const contents = [
       'Examined 2M record NYC crash data to identify accident hotspots, trends, and contributing factors using geospatial analysis and statistical modeling. Applied clustering and association rule mining to uncover seasonal traffic patterns, common vehicle types, and accident causes, aiding data-driven road safety improvements.',
     image: placeholder2,
     techStack: ['Python', 'Folium', 'Pandas', 'PostgreSQL'],
+    url: 'https://github.com/PrattJena/NYC_Crash_Data_Analysis',
   },
   {
     number: 3,
@@ -35,6 +37,7 @@ export const contents = [
       'This project explores real-world JSON data to uncover discrepancies in schema usage, identifying missing or extra fields. Using GitHub data and automated analysis, it provides insights into schema adherence and optimization, aiding the development of more practical and efficient JSON schemas.',
     image: placeholder3,
     techStack: ['Python', 'Pandas', 'REST APIs', 'FastText'],
+    url: 'https://github.com/PrattJena/JSON_Schema_Analysis',
   },
   {
     number: 4,
@@ -43,6 +46,7 @@ export const contents = [
       'Built a full-stack web app to simplify accounts receivable management and improve financial forecasting. Designed an intuitive interface with smart filters for easy customer tracking. Integrated machine learning models to predict payment behavior, helping AR analysts make better, data-driven decisions.',
     image: placeholder1,
     techStack: ['React', 'Javascript', 'PostgreSQL', 'Python', 'Material UI', 'Flask'],
+    url: 'https://github.com/PrattJena/Autonomous_Receivables',
   },
 ];
 

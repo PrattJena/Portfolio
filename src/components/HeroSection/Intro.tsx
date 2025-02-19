@@ -8,7 +8,6 @@ type introProps = {
 };
 
 const disableScroll = () => {
-  // Store current scroll position
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
   document.body.style.overflow = 'hidden';
   document.body.style.position = 'fixed';
@@ -17,13 +16,11 @@ const disableScroll = () => {
 };
 
 const enableScroll = () => {
-  // Get the scroll position from the body's top property
   const scrollPosition = parseInt(document.body.style.top || '0', 10) * -1;
   document.body.style.overflow = '';
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.width = '';
-  // Restore the scroll position
   window.scrollTo(0, scrollPosition);
 };
 
@@ -72,12 +69,6 @@ const Intro = (props: introProps) => {
         <div className='scroll-text inset-0 flex items-end font-[Aeonik] text-[1.5vh] whitespace-nowrap text-[rgb(256,256,256,0.4)] opacity-0'>
           Scroll Down
         </div>
-
-        <motion.div
-          className='image-container flex w-[100%] items-end justify-end'
-          initial={{ opacity: 0 }}>
-          <img src={ProfileImage} className='h-[70%] rounded-[1em] lg:h-[93%]' />
-        </motion.div>
       </div> */}
     </motion.div>
   );

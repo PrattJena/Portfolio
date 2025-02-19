@@ -13,7 +13,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
   const onClickUrl =
     (url: string): React.MouseEventHandler<HTMLAnchorElement> =>
     (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
+      e.preventDefault();
       const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
       if (newWindow) newWindow.opener = null;
     };
@@ -27,7 +27,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -43,23 +43,6 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
           <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
             <div className='flex gap-3'>
               <motion.a
-                onClick={onClickUrl('https://www.github.com/prattjena')}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.23, 1, 0.32, 1],
-                }}
-                className='flex cursor-pointer flex-row items-center rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
-                <img
-                  src={github}
-                  alt='github'
-                  className='mx-[calc(var(--gap-sm)+1vw+0.5vh)] my-[var(--gap-xs)] size-[calc(2.5vh+0.7vw)]'
-                />
-              </motion.a>
-
-              <motion.a
                 onClick={onClickUrl('https://www.linkedin.com/in/prattjena')}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -72,6 +55,23 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
                 <img
                   src={linkedin}
                   alt='linkedin'
+                  className='mx-[calc(var(--gap-sm)+1vw+0.5vh)] my-[var(--gap-xs)] size-[calc(2.5vh+0.7vw)]'
+                />
+              </motion.a>
+
+              <motion.a
+                onClick={onClickUrl('https://www.github.com/prattjena')}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.23, 1, 0.32, 1],
+                }}
+                className='flex cursor-pointer flex-row items-center rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
+                <img
+                  src={github}
+                  alt='github'
                   className='mx-[calc(var(--gap-sm)+1vw+0.5vh)] my-[var(--gap-xs)] size-[calc(2.5vh+0.7vw)]'
                 />
               </motion.a>
