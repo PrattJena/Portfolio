@@ -10,25 +10,26 @@ const links = [
 
 export const NavBar = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const handleLogoClick = () => {
+    window.location.href = '/';
+  };
 
   return (
     <motion.nav className='navbar flex h-[3.4vh] w-full flex-row justify-between overflow-y-clip opacity-0 lg:h-[calc(2vh+1vw)]'>
       <div
-        className='flex h-[100%] cursor-pointer items-center'
+        className='logo-entry flex h-[100%] cursor-pointer items-center'
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}>
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleLogoClick}>
         <motion.img
           src={Logo}
           className='h-full'
           animate={{ rotate: isHovered ? -180 : 0 }}
           transition={{
-            duration: 0.5,
+            duration: 0.4,
             ease: 'easeInOut',
           }}
         />
-        {/* <span className='text-p2 ml-[var(--gap-sm)] font-[Aeonik] font-bold text-[#F3F2F2] md:ml-[var(--gap-md)] lg:ml-[var(--gap-lg)]'>
-          PJ
-        </span> */}
       </div>
       <div className='lg:gap-sm flex flex-col justify-between text-right lg:flex-row lg:items-center'>
         {links.map((link, i) => (

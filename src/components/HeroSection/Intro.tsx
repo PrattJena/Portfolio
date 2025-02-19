@@ -1,5 +1,4 @@
 import { motion, MotionValue, useAnimate } from 'motion/react';
-import ProfileImage from '../../assets/images/IMG3.jpg';
 import { HeroSectionContent } from './HeroSectionContent';
 import { useEffect } from 'react';
 import { stagger } from 'motion';
@@ -33,42 +32,31 @@ const Intro = (props: introProps) => {
 
   useEffect(() => {
     const sequence = async () => {
-      // Disable scrolling at the start of animations
       disableScroll();
 
-      // Your existing animation sequence
-      await animate([
-        ['.fade-in-paragraph', { opacity: [0, 1] }, { at: 0, duration: 0.25 }],
-        ['.word', { opacity: [0, 1] }, { delay: stagger(0.05), duration: 0.15 }],
-      ]);
+      await animate([['.fade-in-para-one', { opacity: [0, 1] }, { at: 0, duration: 0.5 }]]);
 
       await animate([
-        ['.hero-button', { opacity: [0, 1] }, { delay: stagger(0.25), duration: 0.25 }],
+        ['.animate-letter', { opacity: [0, 1] }, { delay: stagger(0.1), duration: 0.15 }],
       ]);
 
+      await animate([['.fade-in-para-two', { opacity: [0, 1] }, { at: 0, duration: 0.5 }]]);
+
       await animate([
-        [
-          '.image-container',
-          {
-            clipPath: ['inset(50% 0 100% 0)', 'inset(0% 0 0% 0)'],
-            opacity: [0, 1],
-          },
-          { duration: 0.5, ease: 'easeOut' },
-        ],
+        ['.hero-button', { opacity: [0, 1] }, { delay: stagger(0.25), duration: 0.35 }],
       ]);
 
       await animate([
         ['.scroll-text', { opacity: [0, 1], y: [10, 0] }, { duration: 0.3, ease: 'easeOut' }],
         ['.navbar', { opacity: [0, 1], y: [-10, 0] }, { duration: 0.3, ease: 'easeOut' }],
+        ['.logo-entry', { rotate: [-180, 0] }, { delay: 0.25, duration: 0.4, ease: 'easeOut' }],
       ]);
 
-      // Enable scrolling after all animations complete
       enableScroll();
     };
 
     sequence();
 
-    // Cleanup function to ensure scrolling is re-enabled if component unmounts
     return () => {
       enableScroll();
     };

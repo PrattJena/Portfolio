@@ -1,4 +1,3 @@
-import ResumeButton from '../CustomButtons/ResumeButton';
 import ShinyButton from '../CustomButtons/ShinyButton';
 
 export const Content = () => {
@@ -9,7 +8,6 @@ export const Content = () => {
           Let's Work Together
         </div>
         <div>
-          {/* <ResumeButton /> */}
           <ShinyButton className='scale-150' />
         </div>
       </div>

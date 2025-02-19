@@ -44,7 +44,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
                   duration: 0.5,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+                className='cursor-pointer rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
                 <img
                   src={github}
                   alt='github'
@@ -62,7 +62,7 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
                   duration: 0.5,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className='cursor-pointer rounded-full bg-[#B14A30] transition-opacity hover:opacity-80'>
+                className='cursor-pointer rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
                 <img
                   src={linkedin}
                   alt='linkedin'

@@ -1,11 +1,7 @@
-import { motion } from 'motion/react';
 import { NavBar } from './NavBar';
 import ResumeButton from '../CustomButtons/ResumeButton';
 import ShinyButton from '../CustomButtons/ShinyButton';
 import { HeroSectionTitle } from './HeroSectionTitle';
-
-const text1 = 'I am Pratyush Jena';
-const text2 = 'A Software Developer based in United States.';
 
 export const HeroSectionContent = () => {
   return (
