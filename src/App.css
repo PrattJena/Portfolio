@@ -4,11 +4,11 @@
   --text-main: clamp(3rem, calc(1.7rem + 5.8vw), 13rem);
   --text-h1: clamp(3rem, calc(2.3rem + 4vw), 10rem);
   --text-h2: clamp(1.8rem, calc(1.2rem + 3vw), 9rem);
-  --text-h3: clamp(1.3rem, calc(1.2rem + 2vw), 8rem);
+  --text-h3: clamp(1.3rem, calc(1.2rem + 1.7vw), 8rem);
   --text-h4: clamp(1.5rem, calc(1.4rem + 1vw), 2.2rem);
   --text-span: clamp(0.5rem, calc(0.2rem + 1vw), 3rem);
   --size-icon: clamp(1.5rem, calc(1.4rem + 2vw), 7rem);
-  --text-p: clamp(1rem, calc(0.4rem + 1.2vw), 4rem);
+  --text-p: clamp(1rem, calc(0.4rem + 1vw), 4rem);
   --text-p2: clamp(1.25rem, calc(0.7rem + 1.25vw), 5.3rem);
   --gap-xs: clamp(0.4rem, calc(0.4rem + 0.4vw), 1rem);
   --gap-sm: clamp(1.3rem, calc(0.7rem + 0.8vw), 2rem);
@@ -105,15 +105,4 @@
   src:
     url('./assets/fonts/MaziusDisplay-Extraitalic.woff') format('woff'),
     url('./assets/fonts/MaziusDisplay-Extraitalic.woff2') format('woff2');
-}
-
-@layer utilities {
-  .noise:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E");
-    mix-blend-mode: soft-light;
-  }
 }

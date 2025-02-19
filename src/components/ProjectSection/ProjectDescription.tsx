@@ -27,7 +27,7 @@ const ProjectDescription = ({ activeProject }: ProjectDescriptionProps) => {
               {contents[activeProject].description}
             </p>
             <hr className='border-1 border-[rgb(256,256,256,0.8)]' />
-            <div className='flex flex-row gap-[0.6vw]'>
+            <div className='flex flex-row flex-wrap gap-[0.6vw]'>
               {contents[activeProject].techStack.map((tech, index) => (
                 <span
                   key={index}

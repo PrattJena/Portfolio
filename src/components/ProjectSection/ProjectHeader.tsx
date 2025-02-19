@@ -10,6 +10,14 @@ type ProjectHeaderProps = {
 const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const onClickUrl =
+    (url: string): React.MouseEventHandler<HTMLAnchorElement> =>
+    (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+      if (newWindow) newWindow.opener = null;
+    };
+
   useEffect(() => {
     const handleScroll = () => {
       if (!projectSectionRef.current) return;
@@ -34,9 +42,8 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
           exit={{ opacity: 0 }}>
           <div className='flex items-center justify-end px-[calc(2vw+2vh)] pt-3'>
             <div className='flex gap-3'>
-              {/* GitHub Button */}
               <motion.a
-                href='YOUR_GITHUB_URL'
+                onClick={onClickUrl('https://www.github.com/prattjena')}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
@@ -44,17 +51,16 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
                   duration: 0.5,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className='cursor-pointer rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
+                className='flex cursor-pointer flex-row items-center rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
                 <img
                   src={github}
                   alt='github'
-                  className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
+                  className='mx-[calc(var(--gap-sm)+1vw+0.5vh)] my-[var(--gap-xs)] size-[calc(2.5vh+0.7vw)]'
                 />
               </motion.a>
 
-              {/* LinkedIn Button */}
               <motion.a
-                href='YOUR_LINKEDIN_URL'
+                onClick={onClickUrl('https://www.linkedin.com/in/prattjena')}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
@@ -62,11 +68,11 @@ const ProjectHeader = ({ projectSectionRef }: ProjectHeaderProps) => {
                   duration: 0.5,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className='cursor-pointer rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
+                className='flex cursor-pointer flex-row items-center rounded-full bg-[#B14A30] transition-colors duration-300 ease-in-out hover:bg-[#571C11]'>
                 <img
                   src={linkedin}
                   alt='linkedin'
-                  className='mx-[calc(var(--gap-sm)+0.7rem)] my-[var(--gap-xs)] size-[2.7vh]'
+                  className='mx-[calc(var(--gap-sm)+1vw+0.5vh)] my-[var(--gap-xs)] size-[calc(2.5vh+0.7vw)]'
                 />
               </motion.a>
             </div>

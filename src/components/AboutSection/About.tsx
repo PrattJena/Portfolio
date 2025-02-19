@@ -2,8 +2,8 @@ import { NoiseBackground } from '../NoiseBackground';
 import { useRef } from 'react';
 import AboutSectionTitle from './AboutSectionTitle';
 import IconDown from '../../assets/images/iconDown.svg';
-import ProfileImage1 from '../../assets/images/IMG3.jpg';
-import ProfileImage2 from '../../assets/images/placeholder1.jpg';
+import ProfileImage1 from '../../assets/images/Profile-rect.jpg';
+import ProfileImage2 from '../../assets/images/Profile-sq.jpeg';
 import { AboutMe } from './AboutMe';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 

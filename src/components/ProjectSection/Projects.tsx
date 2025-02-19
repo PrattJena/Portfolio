@@ -28,7 +28,7 @@ const Projects = forwardRef((props: ScrollingProps, forwardedRef) => {
   projectRefs.forEach((ref, index) => {
     const { scrollYProgress } = useScroll({
       target: ref,
-      offset: ['start 0.3', 'end 0.3'],
+      offset: ['start 0.275', 'end 0.275'],
     });
     useMotionValueEvent(scrollYProgress, 'change', (latest) => {
       if (latest > 0 && latest < 1) {

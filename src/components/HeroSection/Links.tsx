@@ -3,11 +3,16 @@ import { motion } from 'motion/react';
 const DURATION = 0.25;
 const STAGGER = 0.015;
 
-export const Links = ({ children, href }: { children: string; href: string }) => {
+type LinksProps = {
+  children: string;
+  onClick: React.MouseEventHandler<HTMLAnchorElement>;
+};
+
+export const Links = ({ children, onClick }: LinksProps) => {
   return (
     <motion.a
       initial='initial'
-      href={href}
+      onClick={onClick}
       whileHover='hovered'
       whileTap={{ color: '#571C11' }}
       style={{ cursor: 'pointer', lineHeight: 0.9 }}
