@@ -10,7 +10,7 @@ const LandingPageCard = (props: ScrollingProps) => {
   const opacity = useTransform(props.scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <motion.section className='sticky top-0 h-svh w-screen'>
+    <motion.section className='sticky top-0 h-svh'>
       <div className='fixed inset-0 -z-10 overflow-hidden'>
         <div
           className='absolute inset-0 bg-black'

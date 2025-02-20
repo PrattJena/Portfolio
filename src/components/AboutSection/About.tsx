@@ -23,7 +23,7 @@ export const About = () => {
     <motion.div
       style={{ scale }}
       ref={parentRef}
-      className='section-padding relative z-2 flex w-screen flex-col rounded-b-[3vw] bg-[#0e0e0e]'>
+      className='section-padding relative z-2 flex flex-col rounded-b-[3vw] bg-[#0e0e0e]'>
       <NoiseBackground className='rounded-b-[3vw]' />
 
       <div className='flex flex-row justify-between'>
