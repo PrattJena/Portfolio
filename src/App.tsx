@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 import { PortfolioWrapper } from './components/PortfolioWrapper';
 import Lenis from 'lenis';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const App = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <>
+      {/* <SpeedInsights /> */}
       <PortfolioWrapper />
     </>
   );
