@@ -30,7 +30,7 @@ const ShinyButton = ({ className = '', style = {}, ...props }: ShinyButtonProps)
     if (isCopied) return;
 
     try {
-      await navigator.clipboard.writeText('pratt@pratt.com');
+      await navigator.clipboard.writeText('hello@pratyushjena.com');
     } catch (err) {
       console.error('Failed to copy text: ', err);
       return;
